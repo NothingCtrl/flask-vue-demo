@@ -4,7 +4,8 @@
 
 ### Development notes
 
-* cd to `frontend`, start server: `npm run dev`
+* In root, create python virtualenv: `virtualenv venv`, active env, and install `requirements.txt` packages
+* cd to `frontend`, install dependencies packages: `npm install`,  start server: `npm run dev`
 * cd to `backend`, start server: `run_DEV.bat`, or
     * in CMD:
         ```cmd
@@ -14,6 +15,7 @@
         flask run
         ```
 * access `http://localhost:5000/` for development serving by Flask, (`http://localhost:8080/` for frontend serving by Node)
+    * Go to `http://localhost:5000/login` login with user: `demo`, password: `demo` 
 
 ### IDE PyCharm notes
 

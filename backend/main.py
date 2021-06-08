@@ -16,7 +16,6 @@ app = Flask(__name__, static_folder="../dist/static", template_folder="../dist")
 app.secret_key = os.getenv('APP_SESSION_SECRET_KEY', "THIS_IS_A_TEMP_KEY")
 login_manager.init_app(app)
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'GET':
@@ -50,6 +49,7 @@ def logout():
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
+@flask_login.login_required
 def catch_all(path):
     if app.debug:
         return requests.get('http://localhost:8080/{}'.format(path)).text
